@@ -1,7 +1,10 @@
-const API_URL = 'http://localhost:5000/api';
-const Sensor_URL = 'http://localhost:5003/sensorvalues';
+const API_URL = 'https://individualapidata.onrender.com';
+const Sensor_URL = 'https://individualsensordata.onrender.com' 
 
-$.get(`${API_URL}/lightdevices`)
+// 'http://localhost:5000/api';
+//'http://localhost:5003/sensorvalues';
+
+$.get(`${API_URL}/api/lightdevices`)
   .then(response => {
     response.forEach(device => {
       $('#lightdevices tbody').append(`
@@ -18,7 +21,7 @@ $.get(`${API_URL}/lightdevices`)
     console.error(`Error: ${error}`);
   });
 
-$.get(`${API_URL}/securitydevices`)
+$.get(`${API_URL}/api/securitydevices`)
   .then(response => {
     response.forEach(device => {
       $('#securitydevices tbody').append(`
@@ -47,7 +50,7 @@ $('#light-device').on('click', function () {
     color
   }
 
-  $.post(`${API_URL}/lightdevices`, body)
+  $.post(`${API_URL}/api/lightdevices`, body)
     .then(response => {
       location.href = 'device-list.html';
     })
@@ -67,7 +70,7 @@ $('#remove-lightdevice').on('click', function () {
     state
   }
 
-  $.post(`${API_URL}/removelightdevices`, body)
+  $.post(`${API_URL}/api/removelightdevices`, body)
     .then(response => {
       location.href = 'device-list.html';
     })
@@ -85,7 +88,7 @@ $('#remove-securitydevice').on('click', function () {
     devicename
   }
 
-  $.post(`${API_URL}/removesecuritydevices`, body)
+  $.post(`${API_URL}/api/removesecuritydevices`, body)
     .then(response => {
       location.href = 'device-list.html';
     })
@@ -105,7 +108,7 @@ $('#security-device').on('click', function () {
     state
   }
 
-  $.post(`${API_URL}/securitydevices`, body)
+  $.post(`${API_URL}/api/securitydevices`, body)
     .then(response => {
       location.href = 'device-list.html';
     })
@@ -125,7 +128,7 @@ $('#changelightdevicestate').on('click', function () {
     color
   };
 
-  $.post(`${API_URL}/updatedevices`, body)
+  $.post(`${API_URL}/api/updatedevices`, body)
     .then(response => {
       location.href = 'device-list.html';
     })
@@ -145,7 +148,7 @@ $('#changesecuritydevicestate').on('click', function () {
     state
   };
 
-  $.post(`${API_URL}/updatesecuritydevices`, body)
+  $.post(`${API_URL}/api/updatesecuritydevices`, body)
     .then(response => {
       location.href = 'device-list.html';
     })
@@ -162,7 +165,7 @@ let lastultraval = [];
 let lastmotionval = [];
 let lasttimeval = [];
 
-$.get(`${Sensor_URL}/sensor-values`)
+$.get(`${Sensor_URL}/sensorvalues/sensor-values`)
   .then(response => {
     response.forEach(device => {
       ultrasensordata.push(device.ultradata);

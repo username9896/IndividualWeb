@@ -4,7 +4,6 @@
   "description": "A web interface to view IoT data",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
   "author": "Vicky Kumar",
@@ -19,6 +18,6 @@
     "swagger-ui-express": "^4.6.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.22"
   }
 }
