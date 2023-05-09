@@ -21,8 +21,8 @@ app.use((req, res, next) => {
     next();
 });
 
-const GOOGLE_CLIENT_ID = '134720855276-7b7gooaenpdkni82v98rqv3i5l11ii78.apps.googleusercontent.com';
-const GOOGLE_CLIENT_SECRET = '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';
+const GOOGLE_CLIENT_ID = '268220279857-0nm3v5me8ncnhi26eedvlt04ggt4r0r0.apps.googleusercontent.com';
+const GOOGLE_CLIENT_SECRET = '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';
 
 passport.use(new GoogleStrategy({
     clientID: GOOGLE_CLIENT_ID,
