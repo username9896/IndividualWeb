@@ -51,7 +51,7 @@ const options = {
         },
         servers: [
             {
-                url: "http://localhost:3000.com",
+                url: "https://individualweb.onrender.com",
             },
         ],
     },
