@@ -1,9 +1,6 @@
 const API_URL = 'https://individualapidata.onrender.com';
 const Sensor_URL = 'https://individualsensordata.onrender.com' 
 
-// 'http://localhost:5000/api';
-//'http://localhost:5003/sensorvalues';
-
 $.get(`${API_URL}/api/lightdevices`)
   .then(response => {
     response.forEach(device => {
@@ -229,7 +226,7 @@ $.get(`${Sensor_URL}/sensorvalues/sensor-values`)
       series: [{
         data: numericYArray
       }]
-    });
+    });w
 
     const numericYArray1 = motionsensorvaluedata.map(val => parseFloat(val));
 

@@ -54,7 +54,19 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: slide-up 1s forwards;
+    animation: slide-up 1s forwards , glowingbox1 2s infinite;
+}
+
+@keyframes glowingbox1 {
+    0% {
+        box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 10px 5px rgba(71, 54, 54, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 5px 0px hsl(0, 9%, 19%);
+    }
 }
 
 .upperbox {
@@ -65,12 +77,51 @@ header {
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
-    background-color: slategray;
+    background-color: hsl(210, 13%, 50%);
     position: absolute;
     top: 0%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: slide-up 1s forwards;
+    animation: slide-up 1s forwards, glowing 2s infinite;
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 5px 0px hsl(210, 13%, 50%);
+    }
+}
+
+#googlelogin {
+    animation: glowingbox 2s infinite;
+}
+
+@keyframes glowingbox {
+    0% {
+        box-shadow: 0 0 5px 0px hsl(210, 13%, 50%);
+    }
+    50% {
+        box-shadow: 0 0 10px 5px hsl(208, 30%, 70%);
+    }
+    100% {
+        box-shadow: 0 0 5px 0px hsl(0, 9%, 19%);
+    }
 }
 
 .backgroundimage {
@@ -118,6 +169,7 @@ header {
     top: 2%;
     left: 18%;
     position: absolute;
+    z-index: 1;
 }
 
 
@@ -132,6 +184,7 @@ header {
     top: 2%;
     left: 25%;
     position: absolute;
+    z-index: 1;
 }
 
 .controllightnavbar {
@@ -141,6 +194,7 @@ header {
     top: 2%;
     left: 31%;
     position: absolute;
+    z-index: 1;
 }
 
 .navbar1 ul li {
